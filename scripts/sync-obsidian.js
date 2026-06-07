@@ -7,15 +7,15 @@ import grayMatter from 'gray-matter';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, '..');
+const OBSIDIAN_PATH = path.join(PROJECT_ROOT, 'Obsidian');
 const ASTRO_BLOG_PATH = path.join(PROJECT_ROOT, 'src/content/blog');
 
 // Directories to exclude from scanning
 const EXCLUDED_DIRS = [
-    'node_modules',
+    '.obsidian',
     '.git',
-    '.astro',
-    ASTRO_BLOG_PATH,
-    'public'
+    '.trash',
+    ASTRO_BLOG_PATH
 ];
 
 async function cleanBlogDirectory() {
@@ -60,20 +60,21 @@ async function findMarkdownFiles(dir) {
 }
 
 function shouldPublishPost(frontmatter) {
-    // Handle different variations of the publish field
-    const publishField = frontmatter.publish ?? frontmatter.published ?? frontmatter.draft;
-    
-    if (publishField === undefined) {
-        return false; // If no publish field is found, don't publish
+    // Skip files explicitly marked as draft
+    if (frontmatter.hasOwnProperty('draft') && frontmatter.draft) {
+        return false;
     }
 
-    // Handle the case where draft: true means don't publish
-    if (frontmatter.hasOwnProperty('draft')) {
-        return !frontmatter.draft;
+    // Skip files explicitly marked as not published
+    if (frontmatter.hasOwnProperty('publish') && !frontmatter.publish) {
+        return false;
+    }
+    if (frontmatter.hasOwnProperty('published') && !frontmatter.published) {
+        return false;
     }
 
-    // Convert to boolean to handle strings like 'true', '1', etc.
-    return Boolean(publishField);
+    // Default to publishing when no publish/draft field is set
+    return true;
 }
 
 async function processMarkdownFile(filePath) {
@@ -114,8 +115,8 @@ async function syncObsidianPosts() {
         // Clean the blog directory
         await cleanBlogDirectory();
         
-        // Find all markdown files starting from project root
-        const markdownFiles = await findMarkdownFiles(PROJECT_ROOT);
+        // Find all markdown files starting from Obsidian directory
+        const markdownFiles = await findMarkdownFiles(OBSIDIAN_PATH);
         
         // Process each file
         await Promise.all(markdownFiles.map(processMarkdownFile));

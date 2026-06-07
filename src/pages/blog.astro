@@ -22,9 +22,9 @@ const posts = (await getCollection('blog'))
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
-        <BaseHead title="Blog - Ideas & Insights" description="Explore our collection of articles, ideas, insights, and everything in between." />
+        <BaseHead title="博客 - 所有文章" description="浏览技术文档、学习笔记与实践经验，探索知识的无限可能。" />
         <style>
             /* Ensure the body takes up at least the full viewport height */
             body {
@@ -115,8 +115,8 @@ const posts = (await getCollection('blog'))
         <Header />
         <main>
             <div class="blog-header">
-                <h1 class="blog-title">Ideas & Insights</h1>
-                <p class="blog-description">Explore our collection of articles, thoughts, and everything in between.</p>
+                <h1 class="blog-title">所有文章</h1>
+                <p class="blog-description">浏览技术文档、学习笔记与实践经验，探索知识的无限可能。</p>
             </div>
             {posts.length > 0 ? (
                 <div class="posts-grid">
@@ -131,7 +131,7 @@ const posts = (await getCollection('blog'))
                 </div>
             ) : (
                 <div class="no-posts">
-                    No posts found. Check back soon!
+                    暂无文章，敬请期待！
                 </div>
             )}
         </main>

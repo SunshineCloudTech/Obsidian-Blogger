@@ -1,0 +1,180 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+import { getUrl } from '../utils/url';
+
+const baseUrl = getUrl('/');
+const pagefindBasePath = baseUrl === '/' ? '/pagefind/' : `${baseUrl}/pagefind/`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title={`搜索 - ${SITE_TITLE}`} description="搜索博客中的文章" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="search-section">
+				<h1>搜索文章</h1>
+				<p class="search-subtitle">输入关键词，快速找到你想要的笔记。</p>
+				<div id="search" class="search-container"></div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<script is:inline define:vars={{ pagefindBasePath }}>
+	// Load Pagefind UI
+	const s = document.createElement('script');
+	s.src = pagefindBasePath + 'pagefind-ui.js';
+	s.onload = () => {
+		// @ts-ignore
+		new PagefindUI({
+			element: '#search',
+			basePath: pagefindBasePath,
+			showImages: false,
+			showSubResults: false,
+			translations: {
+				placeholder: '搜索文章标题或内容...',
+				clear_search: '清除',
+				load_more: '加载更多',
+				search_label: '搜索',
+				empty_query: '输入关键词开始搜索 🔍',
+				no_results: '没有找到相关文章，换个关键词试试？',
+			},
+		});
+	};
+	s.onerror = () => {
+		document.getElementById('search').innerHTML =
+			'<div class="search-fallback"><p>🔍 搜索功能仅在构建后可用。</p><p>请运行 <code>npm run build && npm run preview</code> 预览。</p></div>';
+	};
+	document.head.appendChild(s);
+
+	// Load Pagefind CSS
+	const l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = pagefindBasePath + 'pagefind-ui.css';
+	document.head.appendChild(l);
+</script>
+
+<style>
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+
+	.search-section {
+		text-align: center;
+	}
+
+	.search-section h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.search-subtitle {
+		color: rgb(var(--gray));
+		font-size: 1.1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.search-container {
+		text-align: left;
+		max-width: 680px;
+		margin: 0 auto;
+	}
+
+	.search-fallback {
+		text-align: center;
+		padding: 3rem 2rem;
+		background: rgba(var(--gray-light), 0.5);
+		border-radius: 1rem;
+		color: rgb(var(--gray));
+	}
+
+	.search-fallback code {
+		background: rgba(var(--accent), 0.1);
+		color: var(--accent);
+		padding: 0.2em 0.5em;
+		border-radius: 0.3em;
+	}
+
+	/* ===== Pagefind UI 主题定制 ===== */
+	:root {
+		--pagefind-ui-scale: 1;
+		--pagefind-ui-primary: var(--accent);
+		--pagefind-ui-text: rgb(var(--gray-dark));
+		--pagefind-ui-background: rgb(var(--gray-light));
+		--pagefind-ui-border: rgba(var(--gray), 0.15);
+		--pagefind-ui-border-width: 2px;
+		--pagefind-ui-border-radius: 0.75rem;
+		--pagefind-ui-image-border-radius: 0.5rem;
+		--pagefind-ui-image-box-ratio: 3/2;
+		--pagefind-ui-font: var(--font-body);
+	}
+
+	.pagefind-ui__search-input {
+		font-size: 1.05rem !important;
+		padding: 0.9rem 1rem 0.9rem 2.75rem !important;
+		border-radius: 0.75rem !important;
+		background: rgba(var(--gray-light), 0.5) !important;
+		font-family: var(--font-body) !important;
+		font-weight: 400 !important;
+	}
+
+	.pagefind-ui__search-input:focus {
+		outline: none !important;
+		border-color: var(--accent) !important;
+		box-shadow: 0 0 0 3px rgba(var(--accent), 0.12) !important;
+	}
+
+	.pagefind-ui__search-clear {
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+	}
+
+	.pagefind-ui__result {
+		border: 1px solid rgba(var(--gray), 0.08) !important;
+		border-radius: 0.75rem !important;
+		padding: 1.25rem !important;
+		margin-bottom: 0.75rem !important;
+		background: rgba(var(--gray-light), 0.3) !important;
+		transition: all 0.2s ease !important;
+	}
+
+	.pagefind-ui__result:hover {
+		border-color: rgba(var(--accent), 0.2) !important;
+		background: rgba(var(--gray-light), 0.5) !important;
+	}
+
+	.pagefind-ui__result-title {
+		font-family: var(--font-heading) !important;
+		font-weight: 600 !important;
+	}
+
+	.pagefind-ui__result-excerpt {
+		font-family: var(--font-body) !important;
+		line-height: 1.6 !important;
+	}
+
+	.pagefind-ui__result-excerpt mark {
+		background: rgba(var(--accent), 0.15) !important;
+		color: var(--accent) !important;
+		border-radius: 2px;
+	}
+
+	@media (max-width: 768px) {
+		main {
+			padding: 2rem 1rem;
+		}
+
+		.search-section h1 {
+			font-size: 2rem;
+		}
+	}
+</style>

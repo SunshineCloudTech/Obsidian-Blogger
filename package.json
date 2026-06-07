@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "node scripts/sync-obsidian.js && astro dev",
-    "build": "node scripts/sync-obsidian.js && astro build",
+    "build": "node scripts/sync-obsidian.js && astro build && npx pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "sync": "node scripts/sync-obsidian.js"
@@ -25,6 +25,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
     "astro-expressive-code": "^0.38.3",
+    "pagefind": "^1.5.2",
     "playwright": "^1.49.1",
     "remark-mermaid": "^0.2.0"
   }

@@ -18,7 +18,7 @@ const posts = (await getCollection('blog'))
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -28,14 +28,15 @@ const posts = (await getCollection('blog'))
 			<!-- Hero Section -->
 			<section class="hero">
 				<div class="hero-content">
-					<div class="hero-badge">✨ The Markdown Magic</div>
-					<h1>Write & Share Faster.<br/><span class="gradient-text">Obsidian to beautiful blog in seconds.</span></h1>
+					<div class="hero-badge">🌱 持续生长中</div>
+					<h1>在喧嚣的网络中，<br/><span class="gradient-text">留一片安静写字的地方。</span></h1>
 					<p class="hero-description">
-						The simplest way to transform your Obsidian vault into a modern, blazing-fast blog. No complex setup, just pure markdown magic.
+						技术笔记、生活随想与职业成长 — 这里是我的个人知识库，一个慢慢生长的小小数字花园。
 					</p>
+					<div class="hero-divider"></div>
 					<div class="cta-buttons">
 						<a href={posts[0] ? getUrl(`/${posts[0].id}/`) : getUrl('/')} class="primary-button">
-							Start Reading
+							开始阅读
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M5 12h14m-7-7 7 7-7 7"/>
 							</svg>
@@ -44,7 +45,7 @@ const posts = (await getCollection('blog'))
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
 							</svg>
-							View on GitHub
+							GitHub 仓库
 						</a>
 					</div>
 				</div>
@@ -52,7 +53,7 @@ const posts = (await getCollection('blog'))
 
 			<!-- Latest Blog Posts -->
 			<section class="latest-posts">
-				<h2>Latest Blog Posts</h2>
+				<h2>最新文章</h2>
 				<div class="post-grid">
 					{posts.map((post) => (
 						<BlogCard
@@ -64,7 +65,7 @@ const posts = (await getCollection('blog'))
 					))}
 				</div>
 				<div class="view-all">
-					<a href={getUrl('/blog')} class="secondary-button">View All Posts</a>
+					<a href={getUrl('/blog')} class="secondary-button">查看全部文章</a>
 				</div>
 			</section>
 		</main>
@@ -79,7 +80,7 @@ const posts = (await getCollection('blog'))
 	}
 
 	.hero {
-		padding: 8rem 1rem;
+		padding: 6rem 1rem 5rem;
 		text-align: center;
 		background: transparent;
 		position: relative;
@@ -140,12 +141,21 @@ const posts = (await getCollection('blog'))
 
 	.hero-description {
 		font-size: 1.25rem;
-		margin-bottom: 2.5rem;
+		margin-bottom: 1.5rem;
 		color: rgb(var(--gray));
-		max-width: 600px;
+		max-width: 580px;
 		margin-left: auto;
 		margin-right: auto;
-		line-height: 1.6;
+		line-height: 1.8;
+	}
+
+	.hero-divider {
+		width: 40px;
+		height: 3px;
+		margin: 0 auto 2rem;
+		background: linear-gradient(90deg, transparent, var(--accent), transparent);
+		border-radius: 2px;
+		opacity: 0.4;
 	}
 
 	.cta-buttons {
@@ -222,7 +232,7 @@ const posts = (await getCollection('blog'))
 
 	@media (max-width: 768px) {
 		.hero {
-			padding: 6rem 1rem;
+			padding: 4rem 1rem 3rem;
 		}
 
 		.hero h1 {

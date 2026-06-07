@@ -40,14 +40,14 @@ const sortedPosts = [...posts].sort((a, b) => {
 });
 
 const isAllPosts = tag === 'all';
-const title = isAllPosts ? 'All Posts' : `Posts tagged with #${tag}`;
-const description = isAllPosts 
-    ? 'Browse all articles and insights from our blog.'
-    : `Browse all articles and insights related to ${tag}.`;
+const title = isAllPosts ? '全部文章' : `标签 #${tag} 下的文章`;
+const description = isAllPosts
+    ? '浏览博客中的全部文章与知识分享。'
+    : `浏览与 ${tag} 相关的全部文章与知识分享。`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
         <BaseHead title={title} description={description} />
         <style>
@@ -155,7 +155,7 @@ const description = isAllPosts
                 </div>
             ) : (
                 <div class="no-posts">
-                    No posts found with tag #{tag}. Check back soon!
+                    该标签下暂无文章，敬请期待！
                 </div>
             )}
         </main>

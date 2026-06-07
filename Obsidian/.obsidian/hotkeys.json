@@ -1,0 +1,50 @@
+{
+  "local-gpt:quick-access-2": [
+    {
+      "modifiers": [
+        "Meta"
+      ],
+      "key": "C"
+    }
+  ],
+  "local-gpt:quick-access-1": [
+    {
+      "modifiers": [
+        "Meta"
+      ],
+      "key": "G"
+    }
+  ],
+  "local-gpt:quick-access-3": [
+    {
+      "modifiers": [
+        "Meta"
+      ],
+      "key": "S"
+    }
+  ],
+  "local-gpt:quick-access-4": [
+    {
+      "modifiers": [
+        "Meta"
+      ],
+      "key": "F"
+    }
+  ],
+  "local-gpt:quick-access-5": [
+    {
+      "modifiers": [
+        "Meta"
+      ],
+      "key": "I"
+    }
+  ],
+  "local-gpt:context-menu": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
+    }
+  ]
+}

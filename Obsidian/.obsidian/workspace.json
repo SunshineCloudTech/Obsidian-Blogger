@@ -1,0 +1,262 @@
+{
+  "main": {
+    "id": "0e7653764f721af8",
+    "type": "split",
+    "children": [
+      {
+        "id": "1f36f69830321adc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "90a7e73948eb5fbb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "B站小漫画合集/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "21312ba013eed886",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "B站小漫画合集/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "522a37eaeb3ab65b",
+    "type": "split",
+    "children": [
+      {
+        "id": "9378482c47fceb29",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a5c52252febfb65d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "bb7bf1c9b494099d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "251fccb66a47fd38",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4cf7fb48b8f7fa60",
+    "type": "split",
+    "children": [
+      {
+        "id": "62cd604db0d5b42e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bcf6c5d63d9aeedf",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "B站小漫画合集/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "README 的反向链接列表"
+            }
+          },
+          {
+            "id": "49abfa63e6b1c0e5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "ed8d32e4bdc480da",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "869e0cdf02136048",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-ghost",
+              "title": "all-properties"
+            }
+          },
+          {
+            "id": "c216628bba4510e3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          },
+          {
+            "id": "0659ec61991240bf",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:新建数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "21312ba013eed886",
+  "lastOpenFiles": [
+    "生活与兴趣/如何获取优质蜂蜜.md",
+    "B站小漫画合集/README.md",
+    "生活与兴趣/README.md",
+    "B站小漫画合集/README.md.tmp.29160.c3af20f908d8",
+    "B站小漫画合集/README.md.tmp.29160.cb4620ba2426",
+    "B站小漫画合集/assets/XywNN8KlpA.png",
+    "B站小漫画合集/assets/XHhqvtddUA.png",
+    "B站小漫画合集/assets/Wwzw0XTwUl.png",
+    "B站小漫画合集/assets/VZkCQV3H8N.png",
+    "B站小漫画合集/assets/wqP0BMH8vp.png",
+    "B站小漫画合集/assets/vocgKB4Bjl.png",
+    "B站小漫画合集/assets/JGrXDA8RKH.png",
+    "B站小漫画合集/assets/J8BB0k7uKM.png",
+    "B站小漫画合集/assets/HtPXYfpuXU.png",
+    "B站小漫画合集/assets/I2ep6rPv8i.png",
+    "B站小漫画合集/assets",
+    "B站小漫画合集/README.md.tmp.29160.f0d14d0822df",
+    "README.md",
+    "未命名.md",
+    "技术开发/Git子模块强制更新与路径重配置指南.md",
+    "日本动漫圣地巡礼/日本动漫圣地巡礼-东京都心动漫名所完全攻略.md",
+    "README.md.tmp.29160.4881a3a2f745",
+    "职业发展/IT系统运维工程师面试问题总结.md.tmp.29160.40149db9fa89",
+    "技术开发/Vue3脚手架快速搭建.md.tmp.29160.d577124b7d7c",
+    "B站小漫画合集/README.md.tmp.29160.8ebfe9735545",
+    "系统运维/README.md.tmp.29160.761a0320bdaf",
+    "系统运维/应聘指南07-灾备管理.md",
+    "日本动漫圣地巡礼/README.md.tmp.29160.3cc56e02059e",
+    "2026-06-06.md",
+    "未命名.canvas",
+    "技术开发/GitSubmodule使用指南.md",
+    "技术开发/README.md",
+    "Welcome.md",
+    "系统运维/在VNC中运行Obsidian.md",
+    "在VNC中运行Obsidian.md",
+    "项目文档/README.md",
+    "职业发展/面试常见问题解答(3).md",
+    "职业发展/面试常见问题解答(2).md",
+    "职业发展/面试常见问题解答(1).md",
+    "职业发展/面试常见问题标准解答示例.md",
+    "职业发展/运维应届生面试问题准备.md",
+    "职业发展/简历中的教育经历如何撰写.md",
+    "职业发展/简历中的实习经历如何撰写.md",
+    "职业发展/简历中的个人优势如何撰写.md",
+    "职业发展/电信行业面试问题参考回答.md",
+    "职业发展/电信行业面试问题准备.md",
+    "职业发展/校园技术运维常见对话用语.md"
+  ]
+}

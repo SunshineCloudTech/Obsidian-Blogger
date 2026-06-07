@@ -36,7 +36,7 @@ const {
 const safeTags = tags ?? [];
 ---
 
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<BaseHead
 			title={title}
@@ -131,14 +131,14 @@ const safeTags = tags ?? [];
 	<body>
 		<Header />
 		<main>
-			<article>
+			<article data-pagefind-body>
 				<div class="prose">
 					<div class="title">
 						{created_date && (
 							<div class="date">
 								<FormattedDate date={created_date} />
 								{updated_date && updated_date > created_date && (
-									<span> (Updated: <FormattedDate date={updated_date} />)</span>
+									<span> （更新于：<FormattedDate date={updated_date} />）</span>
 								)}
 							</div>
 						)}

@@ -1,0 +1,33 @@
+{
+  "_version": 1,
+  "debugLogging": false,
+  "useNativeFetch": false,
+  "providers": [
+    {
+      "id": "id-1741087167628",
+      "name": "Ollama",
+      "apiKey": "",
+      "url": "http://localhost:11434",
+      "type": "ollama",
+      "model": "deepseek-r1:latest",
+      "availableModels": [
+        "deepseek-r1:latest",
+        "nomic-embed-text:latest",
+        "qwen2.5:latest"
+      ]
+    },
+    {
+      "id": "id-1741087215316",
+      "name": "Ollama-emb",
+      "apiKey": "",
+      "url": "http://localhost:11434",
+      "type": "ollama",
+      "model": "nomic-embed-text:latest",
+      "availableModels": [
+        "deepseek-r1:latest",
+        "nomic-embed-text:latest",
+        "qwen2.5:latest"
+      ]
+    }
+  ]
+}

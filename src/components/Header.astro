@@ -11,16 +11,17 @@ import { getUrl } from '../utils/url';
 			<div class="nav-brand">
 				<a href={getUrl('/')} class="brand-link">
 					<div class="brand-icon">
-						<img src={getUrl('/icon.png')} alt="Obsidian Blogger Logo" width="24" height="24" />
+						<img src={getUrl('/icon.png')} alt="SunshineCloud Logo" width="24" height="24" />
 					</div>
 					<span class="brand-text">{SITE_TITLE}</span>
 				</a>
 			</div>
 
 			<div class="nav-links">
-				<HeaderLink href={getUrl('/')}>Home</HeaderLink>
-				<HeaderLink href={getUrl('/blog')}>Blog</HeaderLink>
-				<HeaderLink href={getUrl('/about')}>About</HeaderLink>
+				<HeaderLink href={getUrl('/')}>首页</HeaderLink>
+				<HeaderLink href={getUrl('/blog')}>博客</HeaderLink>
+				<HeaderLink href={getUrl('/search')}>搜索</HeaderLink>
+				<HeaderLink href={getUrl('/about')}>关于</HeaderLink>
 			</div>
 
 			<div class="nav-actions">
@@ -90,27 +91,27 @@ import { getUrl } from '../utils/url';
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 2.25rem;
-		height: 2.25rem;
-		background: rgba(var(--gray-light), 0.5);
-		border-radius: 0.85rem;
-		padding: 0.25rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
 		flex-shrink: 0;
-		box-shadow: 
-			0 2px 4px rgba(var(--gray), 0.1),
-			0 0 0 1px rgba(var(--gray), 0.05);
+		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+		padding: 2px;
+		box-shadow: 0 0 0 3px rgba(var(--accent), 0.12);
+		transition: box-shadow 0.3s ease, transform 0.3s ease;
+	}
+
+	.brand-link:hover .brand-icon {
+		box-shadow: 0 0 0 5px rgba(var(--accent), 0.2);
+		transform: scale(1.05);
 	}
 
 	.brand-icon img {
 		width: 100%;
 		height: 100%;
-		border-radius: 0.6rem;
+		border-radius: 50%;
 		object-fit: cover;
-		transition: transform 0.2s ease;
-	}
-
-	.brand-link:hover .brand-icon img {
-		transform: scale(1.05);
+		border: 2px solid rgb(var(--gray-light));
 	}
 
 	.brand-text {
@@ -126,32 +127,37 @@ import { getUrl } from '../utils/url';
 
 	.nav-links {
 		display: flex;
-		gap: 1rem;
+		gap: 0.25rem;
 		align-items: center;
 		justify-content: center;
 		height: 100%;
+		padding: 0.25rem;
+		background: rgba(var(--gray), 0.04);
+		border-radius: 0.75rem;
 	}
 
 	.nav-links a {
 		position: relative;
-		padding: 0.5rem 0.75rem;
+		padding: 0.45rem 0.9rem;
 		color: rgb(var(--gray-dark));
 		text-decoration: none;
 		font-size: 0.95rem;
 		font-weight: 500;
-		border-radius: 0.5rem;
-		transition: all 0.2s ease;
+		border-radius: 0.6rem;
+		transition: all 0.25s ease;
 		white-space: nowrap;
 	}
 
 	.nav-links a:hover {
 		color: rgb(var(--black));
-		background: rgba(var(--gray), 0.1);
+		background: rgba(var(--gray), 0.08);
 	}
 
 	.nav-links a.active {
-		color: var(--accent);
+		color: rgb(var(--black));
+		background: rgba(var(--gray-light), 0.7);
 		font-weight: 600;
+		box-shadow: 0 1px 3px rgba(var(--gray), 0.1);
 	}
 
 	.nav-actions {
@@ -164,11 +170,11 @@ import { getUrl } from '../utils/url';
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 2rem;
-		height: 2rem;
+		width: 2.25rem;
+		height: 2.25rem;
 		color: rgb(var(--gray-dark));
-		border-radius: 0.5rem;
-		transition: all 0.2s ease;
+		border-radius: 0.6rem;
+		transition: all 0.25s ease;
 	}
 
 	.social-link:hover {
@@ -190,7 +196,7 @@ import { getUrl } from '../utils/url';
 		}
 
 		.nav-wrapper {
-			gap: 1.5rem;
+			gap: 1rem;
 		}
 
 		.brand-text {
@@ -198,17 +204,13 @@ import { getUrl } from '../utils/url';
 		}
 
 		.brand-icon {
-			width: 2.1rem;
-			height: 2.1rem;
-		}
-
-		.nav-links {
-			gap: 0.75rem;
+			width: 2.2rem;
+			height: 2.2rem;
 		}
 
 		.nav-links a {
-			padding: 0.45rem 0.65rem;
-			font-size: 0.925rem;
+			padding: 0.4rem 0.7rem;
+			font-size: 0.9rem;
 		}
 	}
 
@@ -220,27 +222,27 @@ import { getUrl } from '../utils/url';
 		}
 
 		.nav-wrapper {
-			gap: 0.75rem;
+			gap: 0.5rem;
 		}
 
 		.brand-text {
-			font-size: 1rem;
-			max-width: 120px;
+			font-size: 0.95rem;
+			max-width: 100px;
 		}
 
 		.brand-icon {
 			width: 2rem;
 			height: 2rem;
-			padding: 0.2rem;
 		}
 
 		.nav-links {
-			gap: 0.35rem;
+			border-radius: 0.6rem;
 		}
 
 		.nav-links a {
-			padding: 0.4rem 0.5rem;
-			font-size: 0.875rem;
+			padding: 0.35rem 0.5rem;
+			font-size: 0.85rem;
+			border-radius: 0.45rem;
 		}
 
 		.nav-actions {
@@ -248,13 +250,13 @@ import { getUrl } from '../utils/url';
 		}
 
 		.social-link {
-			width: 1.75rem;
-			height: 1.75rem;
+			width: 2rem;
+			height: 2rem;
 		}
 
 		.social-link svg {
-			width: 1.1rem;
-			height: 1.1rem;
+			width: 1.15rem;
+			height: 1.15rem;
 		}
 	}
 </style>
